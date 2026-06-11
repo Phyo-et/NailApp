@@ -1,0 +1,18 @@
+POST   /api/customers
+GET    /api/customers
+GET    /api/customers/{id}
+PUT    /api/customers/{id}
+DELETE /api/customers/{id}
+
+POST   /api/services
+GET    /api/services
+
+POST   /api/staff
+GET    /api/staff
+
+POST   /api/appointments
+GET    /api/appointments
+PUT    /api/appointments/{id}/complete
+PUT    /api/appointments/{id}/cancel
+
+POST   /api/payments

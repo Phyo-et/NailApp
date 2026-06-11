@@ -1,0 +1,34 @@
+Datatbase Create -> first draw dB diagram
+db query
+
+Domain layer -> database table connected
+Repository layer -> interface class ->CRUD function via related database framework
+Service Layer -> interface class or abstract method ->
+Service Impl-> implement nailService interface to bussiness logic
+Controller-> api via HTTP
+
+@RestController = @Controller + @ResponseBody
+
+domain -> repo -> dto ->nailService -> mapper -> serviceimpl -> controller
+
+Domain
+
+@GETTER ,@SETTER
+@Entity, -> mean table represent in Database
+@Table(name = "services") -> table linking with table name
+@Id ->entity class as the primary key. It designates that this field uniquely identifies each record within a database table
+@GeneratedValue(strategy =  GenerationType.IDENTITY ) -> to let the database handle the generation of primary keys using an auto-increment or identity column.
+
+
+
+
+
+Note :
+1> write one function after another ... step by step going domain , dto , repo ,mapper , nailService ,serviceimpl , controller
+
+for testing and debugging -> start from controller , nailService , serviceImpl , mapper
+
+
+   .stream() -> alows you to process collections of objects (like Lists or Sets) in a functional and declarative way, rather than using traditional for-loops
+   .map(CustomerMapper::toDTO) ->CustomerMappper.toDto
+   .toList(); terminal operation
