@@ -2,6 +2,8 @@ package com.nailsalon.backend.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,12 +31,19 @@ public class Customer {
     private String name;
     private String phone;
     private String email;
-    private String gender;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    @Column()
+
     private int delflag =0;
+
+    public enum Gender {
+        MALE,
+        FEMALE
+    }
 
     @PrePersist
     public void onCreate(){

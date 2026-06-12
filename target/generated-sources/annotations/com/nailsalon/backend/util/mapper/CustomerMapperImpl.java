@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-06-01T12:45:57+0630",
+    date = "2026-06-12T13:43:07+0630",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.3 (Oracle Corporation)"
 )
 @Component
@@ -24,7 +24,9 @@ public class CustomerMapperImpl implements CustomerMapper {
         customerDTO.setCustomerName( customer.getName() );
         customerDTO.setPhone( customer.getPhone() );
         customerDTO.setEmail( customer.getEmail() );
-        customerDTO.setGender( customer.getGender() );
+        if ( customer.getGender() != null ) {
+            customerDTO.setGender( customer.getGender().name() );
+        }
 
         return customerDTO;
     }
@@ -40,7 +42,9 @@ public class CustomerMapperImpl implements CustomerMapper {
         customer.setName( customerDTO.getCustomerName() );
         customer.setPhone( customerDTO.getPhone() );
         customer.setEmail( customerDTO.getEmail() );
-        customer.setGender( customerDTO.getGender() );
+        if ( customerDTO.getGender() != null ) {
+            customer.setGender( Enum.valueOf( Customer.Gender.class, customerDTO.getGender() ) );
+        }
 
         return customer;
     }

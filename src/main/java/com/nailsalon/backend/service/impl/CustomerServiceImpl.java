@@ -67,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setName( dto.getCustomerName() );
         customer.setPhone( dto.getPhone() );
         customer.setEmail( dto.getEmail() );
-        customer.setGender( dto.getGender() );
+        customer.setGender( Enum.valueOf(Customer.Gender.class, dto.getGender()));
         Customer updatedCustomer = customerRepository.save(customer);
         log.info("Customer id "+id + "is updated ");
 
