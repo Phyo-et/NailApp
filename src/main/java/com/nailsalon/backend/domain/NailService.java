@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "services")
-public class NailService {
+public class NailService extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY )
@@ -25,19 +25,5 @@ public class NailService {
     private String description;
     private double price;
     private int durationMinute;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private int delflag=0;
 
-
-    @PrePersist
-    public void onCreate(){
-        createdAt= LocalDateTime.now();
-        updatedAt= LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void  onUpdate(){
-        updatedAt= LocalDateTime.now();
-    }
 }

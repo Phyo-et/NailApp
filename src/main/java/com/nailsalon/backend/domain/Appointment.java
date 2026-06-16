@@ -20,7 +20,7 @@ import java.time.LocalTime;
 @Setter
 @Entity
 @Table(name = "appointments")
-public class Appointment {
+public class Appointment extends BaseEntity{
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY )
     private int id;
@@ -38,21 +38,7 @@ public class Appointment {
     private LocalTime endTime;
     private Status status;
     private String notes;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private int delflag=0;
 
-    @PrePersist
-    public void onCreate(){
-        createdAt= LocalDateTime.now();
-        updatedAt= LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void  onUpdate(){
-        updatedAt= LocalDateTime.now();
-
-    }
     public enum Status {
         BOOKED,
         COMPLETED,

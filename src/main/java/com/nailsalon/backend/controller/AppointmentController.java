@@ -3,6 +3,8 @@ package com.nailsalon.backend.controller;
 import com.nailsalon.backend.dto.AppointmentDTO;
 import com.nailsalon.backend.service.AppointmentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,28 +24,29 @@ public class AppointmentController {
 
 
     @PostMapping
-    public AppointmentDTO create (@RequestBody AppointmentDTO dto){
-        return appointmentService.create(dto);
+    public ResponseEntity<AppointmentDTO> create (@RequestBody AppointmentDTO dto){
+        AppointmentDTO createdAppointment = appointmentService.create(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdAppointment);
     }
 
     @GetMapping
-    public List<AppointmentDTO> getAll(){
-        return appointmentService.getAll();
+    public ResponseEntity<List<AppointmentDTO>> getAll(){
+        return ResponseEntity.ok(appointmentService.getAll());
     }
 
     @GetMapping("/{id}")
-    public AppointmentDTO getById (@PathVariable int id ){
-        return appointmentService.getById(id);
+    public ResponseEntity<AppointmentDTO> getById (@PathVariable int id ){
+        return ResponseEntity.ok(appointmentService.getById(id));
     }
 
     @PutMapping("/{id}")
-    public AppointmentDTO update (@PathVariable int id ,@RequestBody AppointmentDTO dto){
-        return appointmentService.update(id , dto);
+    public ResponseEntity<AppointmentDTO> update (@PathVariable int id ,@RequestBody AppointmentDTO dto){
+        return ResponseEntity.ok(appointmentService.update(id , dto));
     }
     @DeleteMapping("/{id}")
-    public String delete (@PathVariable int id){
+    public ResponseEntity<String> delete (@PathVariable int id){
         appointmentService.delete(id);
-        return "Appointment ( "+appointmentService.getById(id).getAppointmentDate() +" ) is deleted successfully ";
+        return ResponseEntity.ok("Appointment ( "+appointmentService.getById(id).getAppointmentDate() +" ) is deleted successfully ");
     }
 
 }

@@ -81,7 +81,7 @@ public class CustomerServiceImpl implements CustomerService {
             log.warn("Customer not found!");
             throw new ResourceNotFoundException("Customer not found");
         }
-        customer.setDelflag(1);
+
         customerRepository.save(customer);
         log.info("customer id "+id + " is deleted !!!");
     }

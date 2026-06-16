@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "staffs")
-public class Staff {
+public class Staff extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY )
@@ -24,22 +24,6 @@ public class Staff {
     private String name;
     private String phone;
     private String role;
-
     private int experienceYears ;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private int delflag=0;
 
-    @PrePersist
-    public void onCreate(){
-        createdAt= LocalDateTime.now();
-        updatedAt= LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void  onUpdate(){
-
-        updatedAt= LocalDateTime.now();
-
-    }
 }

@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "payments")
-public class Payment {
+public class Payment extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +37,6 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
     private LocalDateTime paidAt;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private int delflag=0;
 
     public enum PaymentMethod{
         CASH,
@@ -52,16 +49,6 @@ public class Payment {
         PAID,
         PENDING,
         REFUNDED
-    }
-    @PrePersist
-    public void onCreate(){
-        createdAt= LocalDateTime.now();
-        updatedAt= LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void  onUpdate(){
-        updatedAt= LocalDateTime.now();
     }
 
 
