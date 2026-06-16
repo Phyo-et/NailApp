@@ -5,6 +5,7 @@
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/controller/PaymentController.java
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/controller/StaffController.java
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/domain/Appointment.java
+/Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/domain/BaseEntity.java
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/domain/Customer.java
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/domain/NailService.java
 /Users/phyolay/Documents/JAVA/Java_KoXiaoTie/github/NailApp/src/main/java/com/nailsalon/backend/domain/Payment.java

@@ -41,6 +41,7 @@ com/nailsalon/backend/repository/StaffRepository.class
 com/nailsalon/backend/domain/Appointment.class
 com/nailsalon/backend/service/PaymentService.class
 com/nailsalon/backend/repository/AppointmentRepository.class
+com/nailsalon/backend/domain/BaseEntity.class
 com/nailsalon/backend/dto/CustomerDTO.class
 com/nailsalon/backend/repository/CustomerRepository.class
 com/nailsalon/backend/util/mapper/CustomerMapperImpl.class
